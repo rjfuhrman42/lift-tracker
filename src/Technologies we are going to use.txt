@@ -1,0 +1,7 @@
+Technologies we are going to use
+
+1. React (obviously)
+2. Firebase for the database
+3. Either AWS or Netlify for the deployment
+
+probably more
