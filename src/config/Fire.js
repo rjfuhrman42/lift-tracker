@@ -2,7 +2,7 @@ import firebase from "firebase";
 require('dotenv').config();
 
   var firebaseConfig = {
-    apiKey: process.env.REACT_APP_LIFT_TRACKER_FIREBASE_KEY,
+    apiKey: process.env.REACT_APP_LIFT_TRACKER_FIREBASE_API_KEY,
     authDomain: process.env.REACT_APP_LIFT_TRACKER_FIREBASE_DOMAIN,
     databaseURL: process.env.REACT_APP_LIFT_TRACKER_FIREBASE_DATABASE,
     projectId: process.env.REACT_APP_LIFT_TRACKER_FIREBASE_KEY,

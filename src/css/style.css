@@ -9,7 +9,7 @@ html, body{
 }
 
 .App {
-  color: white;
+  color: black;
 }
 
 header{
@@ -25,6 +25,7 @@ header::after {
 
 .container {
   padding-left: 10px;
+  height: 8vh;
   margin: 0 auto;
 }
 
@@ -61,4 +62,20 @@ nav {
 
 .intro-content-container img {
   width: 100%;
+}
+
+.title-bar {
+  background-color: #D2D2D2;
+  width: 100vw;
+  height: 5vh;
+  text-align: center;
+}
+
+.title-bar h1{
+  margin: 0;
+  padding-top: 5px;
+}
+
+.today {
+  text-align: center;
 }
