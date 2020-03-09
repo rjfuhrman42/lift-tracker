@@ -8,6 +8,9 @@ const Today = (props) => {
     return (
         <div className="today">
             <h1>{theDay}</h1>
+            <div class="add-exercise">
+                <button>add</button>
+            </div>
         </div>
     )
 }

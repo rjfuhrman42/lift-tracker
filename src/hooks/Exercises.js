@@ -1,6 +1,8 @@
 import React, {useState} from "react"
 import SearchBar from "./SearchBar"
 
+import ModalButton from './Modal/ModalButton';
+
 function Exercises() {
 
     const [results, updateResults] = useState("")
@@ -13,7 +15,12 @@ function Exercises() {
                         if(data.suggestions.length === 0) updateResults(<li>No results found!</li>)
                         else
                         updateResults(data.suggestions
-                        .map(item => <li key={item.data.id}>{item.data.name}</li>))
+                        .map(item => 
+
+                            <li key={item.data.id}>
+                                {item.data.name}
+                                <ModalButton>add</ModalButton>
+                            </li>))
                       })
     }
 
