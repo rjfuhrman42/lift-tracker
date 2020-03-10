@@ -14,6 +14,7 @@ function ModalButton(props) {
 
       <MyVerticallyCenteredModal
         show={modalShow}
+        modalcontent={props.modalcontent}
         onHide={() => setModalShow(false)}
       />
     </React.Fragment>

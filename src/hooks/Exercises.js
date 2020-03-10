@@ -19,7 +19,7 @@ function Exercises() {
 
                             <li key={item.data.id}>
                                 {item.data.name}
-                                <ModalButton>add</ModalButton>
+                                <ModalButton modalcontent={item}>add</ModalButton>
                             </li>))
                       })
     }
