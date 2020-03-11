@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
+import Exercises from "../Exercises"
 
 function MyVerticallyCenteredModal(props) {
 
@@ -22,7 +23,6 @@ function MyVerticallyCenteredModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-
             <h4>How much weight?</h4>
             <input type="number"></input> 
 
@@ -37,6 +37,8 @@ function MyVerticallyCenteredModal(props) {
           <input type="number"></input>
           <h4>How many reps?</h4>
           <input type="number"></input>
+          <h4>When?</h4>
+          <input type="date"></input>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Save</Button>

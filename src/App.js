@@ -67,10 +67,10 @@ function App() {
             <Today props={today}/>
           </Route>
           <Route path="/myweek">
-            <MyWeek/>
+            <MyWeek />
           </Route>
           <Route path="/exercises">
-            <Exercises/>
+            <Exercises />
           </Route>
         </Switch>
     </div>

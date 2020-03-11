@@ -6,7 +6,6 @@ html, body{
   padding: 0;
   height: 100%;
   font-family: 'Montserrat';
-  text-align: center;
 }
 
 .App {
@@ -132,7 +131,18 @@ nav {
 
 .add-exercise {
   background-color: #D4F6FF;
-  width: 20vw;
-  height: 10vh;
+  position: absolute;
+  width: 10vw;
+  height: 5vh;
   margin: 0 auto;
+  right: 45%;
+}
+
+.add-exercise:hover {
+  background-color: rgb(52, 53, 71);
+  color: white;
+}
+
+.my-week {
+  text-align: center;
 }

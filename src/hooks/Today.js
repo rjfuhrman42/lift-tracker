@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
 const Today = (props) => {
 
@@ -8,9 +9,9 @@ const Today = (props) => {
     return (
         <div className="today">
             <h1>{theDay}</h1>
-            <div class="add-exercise">
-                <button>add</button>
-            </div>
+            <Link to="/exercises">
+                <button class="add-exercise">Add Exercise +</button>
+            </Link>
         </div>
     )
 }
