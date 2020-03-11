@@ -6,6 +6,7 @@ html, body{
   padding: 0;
   height: 100%;
   font-family: 'Montserrat';
+  text-align: center;
 }
 
 .App {
@@ -66,7 +67,7 @@ nav {
 
 .title-bar {
   background-color: #D2D2D2;
-  width: 100vw;
+  width: auto;
   height: 5vh;
   text-align: center;
   border: 1px solid grey;
