@@ -1,6 +1,6 @@
 ## Lift Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Keep track of your daily workout, so you can see your progress! Make use of the WGER API to search for the exact exercise you did!
 
 ## Available Scripts
 
