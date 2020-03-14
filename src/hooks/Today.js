@@ -10,7 +10,7 @@ const Today = (props) => {
         <div className="today">
             <h1>{theDay}</h1>
             <Link to="/exercises">
-                <button class="add-exercise">Add Exercise +</button>
+                <button className="add-exercise">Add Exercise +</button>
             </Link>
         </div>
     )

@@ -6,9 +6,19 @@ import ToggleButton from 'react-bootstrap/ToggleButton'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import Exercises from "../Exercises"
 
+import firebase from "firebase"
+
 function MyVerticallyCenteredModal(props) {
 
     const {name} = props.modalcontent.data
+    
+
+  function handleClick() {
+    props.onHide()
+    // firebase.database().ref(`/users/${props.uid}/logs/${today}`).set({
+
+    // })
+  }
 
     return (
       <Modal
@@ -41,7 +51,7 @@ function MyVerticallyCenteredModal(props) {
           <input type="date"></input>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Save</Button>
+          <Button onClick={handleClick}>Save</Button>
         </Modal.Footer>
       </Modal>
     );

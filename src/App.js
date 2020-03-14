@@ -5,6 +5,7 @@ import {
   Link,
   useLocation
 } from "react-router-dom";
+import Context from "./context"
 
 import Navbar from "./hooks/Navbar"
 import Today from "./hooks/Today"
@@ -17,8 +18,11 @@ import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import fire from "./config/Fire"
 
+ var database = firebase.database()
+
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [userID, setUserID] = useState();
 
   const today = new Date(Date.now())                                      // get Todays full date
   var options = { month: 'long'};                                         // So we can get the month into the proper format
@@ -38,15 +42,19 @@ function App() {
       fire.auth().onAuthStateChanged((user) => {
 
       // if the user is logged in set is to be true
-      if(user) setIsSignedIn(true)    
+      if(user){
+                setIsSignedIn(true)  
+                setUserID(user.uid)  
+      }
       else setIsSignedIn(false);
 
     })
   }, [])
 
-  // user is signed in return their contents
+  // user is signed in return their contents, wrap in the context provider, so that we can provide components with the USERID
   if(isSignedIn) return (
-    <div className="App">
+    <Context.Provider value={userID}>
+      <div className="App">
         <Navbar>
           <li>
             <Link to="/today">Today</Link>
@@ -73,7 +81,8 @@ function App() {
             <Exercises />
           </Route>
         </Switch>
-    </div>
+      </div>
+    </Context.Provider>
   )
 
   // otherwise render the main page

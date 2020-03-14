@@ -16,7 +16,7 @@ function MyWeek() {
     return (
         <div className="my-week">
             <Link to="/exercises">
-                <button class="add-exercise">Add Exercise +</button>
+                <button className="add-exercise">Add Exercise +</button>
             </Link>
             <FullCalendar defaultView="dayGridWeek" 
             header={{left:   'title',center: '',right:  'today prev,next'}}

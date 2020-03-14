@@ -1,22 +1,26 @@
 import React, {useState} from "react"
 import MyVerticallyCenteredModal from './MyVerticallyCenteredModal'
 import Button from 'react-bootstrap/Button';
+import Context from "../../context"
 
 function ModalButton(props) {
   const [modalShow, setModalShow] = useState(false);
-  console.log(modalShow)
 
   return (
     <React.Fragment>
       <Button variant="primary" onClick={() => setModalShow(true)}>
         +
       </Button>
-
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        modalcontent={props.modalcontent}
-        onHide={() => setModalShow(false)}
-      />
+      <Context.Consumer>
+        {(userID) => (
+                <MyVerticallyCenteredModal
+                show={modalShow}
+                uid={userID}
+                modalcontent={props.modalcontent}
+                onHide={() => setModalShow(false)}
+              />
+        )}
+      </Context.Consumer>
     </React.Fragment>
   );
 }
