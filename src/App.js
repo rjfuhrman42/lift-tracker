@@ -57,7 +57,7 @@ function App() {
       <div className="App">
         <Navbar>
           <li>
-            <Link to="/today">Today</Link>
+            <Link to="/">Today</Link>
           </li>
           <li>
             <Link to="/myweek">My Week</Link>
@@ -71,7 +71,7 @@ function App() {
         <TitleBar>{location.pathname === '/exercises' ? 'Exercise Search' : `${month} ${today.getFullYear()}`}</TitleBar>
         
         <Switch>
-          <Route path="/today">
+          <Route exact path="/">
             <Today props={today}/>
           </Route>
           <Route path="/myweek">
