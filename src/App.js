@@ -18,8 +18,6 @@ import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import fire from "./config/Fire"
 
- var database = firebase.database()
-
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [userID, setUserID] = useState();
@@ -72,10 +70,10 @@ function App() {
         
         <Switch>
           <Route exact path="/">
-            <Today props={today}/>
+            <Today props={today, userID}/>
           </Route>
           <Route path="/myweek">
-            <MyWeek />
+            <MyWeek uid={userID}/>
           </Route>
           <Route path="/exercises">
             <Exercises />

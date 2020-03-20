@@ -1,17 +1,26 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 import FullCalendar from '@fullcalendar/react'
+import firebase from "firebase"
+
 import dayGridPlugin from '@fullcalendar/daygrid'
 import '@fullcalendar/core/main.css'
 
-function MyWeek() {
+
+function MyWeek(props) {
 
     let [events, updateEvents] = useState([])
+    var database = firebase.database()
 
     function buildEvent()
     {
-        updateEvents([...events, { title: 'deadlift', start: new Date() }])  // consistent datetime
+        console.log(database.ref(`/users/${props.uid}/logs`))
+        updateEvents([...events])  // consistent datetime
     }
+
+    useEffect(() => {
+        buildEvent()
+    }, [])
 
     return (
         <div className="my-week">

@@ -25,7 +25,8 @@ function MyVerticallyCenteredModal(props) {
     entry['exercise'] = name;                                     // set the name of the exercise
     inputs.forEach(input => entry[input.name] = input.value)      // set the values of the inputs
 
-    firebase.database().ref(`/users/${props.uid}/logs/${today}`).set(entry) // log the entry into the firebase db
+    var todayRef = firebase.database().ref(`/users/${props.uid}/logs/${today}`).push(); // allows us to add multiple exercise entries
+    todayRef.set(entry)                                                                 // log the entry into the firebase db
   }
 
   function handleChange(e) {
