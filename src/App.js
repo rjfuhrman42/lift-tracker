@@ -45,12 +45,12 @@ function App() {
                 setUserID(user.uid)  
       }
       else setIsSignedIn(false);
-
     })
   }, [])
 
-  // user is signed in return their contents, wrap in the context provider, so that we can provide components with the USERID
-  if(isSignedIn) return (
+  // user is signed in (and their ID has been set) return their contents, wrap in the context provider, so that we can provide components with the USERID
+  
+  if(isSignedIn && userID) return (
     <Context.Provider value={userID}>
       <div className="App">
         <Navbar>
@@ -70,7 +70,7 @@ function App() {
         
         <Switch>
           <Route exact path="/">
-            <Today props={today, userID}/>
+            <Today uid={userID} today={today}/>
           </Route>
           <Route path="/myweek">
             <MyWeek uid={userID}/>

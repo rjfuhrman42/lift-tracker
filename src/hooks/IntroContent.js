@@ -4,7 +4,7 @@ import image from "../assets/deadlifting.png"
 const IntroContent = () => {
     return (
         <div className="intro-content-container">
-            <img src={image}/>
+            <img src={image} alt="man-deadlifting"/>
         </div>
     )
 }
