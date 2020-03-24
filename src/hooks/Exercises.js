@@ -12,13 +12,16 @@ function Exercises() {
         fetch(api_url)
         .then(exercises => exercises.json())
         .then(data => {
+            console.log(data.suggestions)
                         if(data.suggestions.length === 0) updateResults(<li>No results found!</li>)
                         else
                         updateResults(data.suggestions
                         .map(item => 
 
                             <li key={item.data.id}>
-                                {item.data.name}
+                                <div className="ex-name">
+                                    {item.data.name}
+                                </div>
                                 <ModalButton modalcontent={item}>add</ModalButton>
                             </li>))
                       })
@@ -34,7 +37,10 @@ function Exercises() {
 
     return (
         <React.Fragment>
-            <SearchBar handlePress={handlePress}/>
+            <div>
+                <ModalButton rest="true"/>
+                <SearchBar handlePress={handlePress}/>
+            </div>
             <ul className="results-list">
                 {results} 
             </ul>

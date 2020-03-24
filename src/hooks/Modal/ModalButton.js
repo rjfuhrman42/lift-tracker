@@ -9,7 +9,7 @@ function ModalButton(props) {
   return (
     <React.Fragment>
       <Button variant="primary" onClick={() => setModalShow(true)}>
-        +
+        {props.rest === "true" ? "Add Rest Day" : "+"}
       </Button>
       <Context.Consumer>
         {(userID) => (
@@ -17,6 +17,7 @@ function ModalButton(props) {
                 show={modalShow}
                 uid={userID}
                 modalcontent={props.modalcontent}
+                rest={props.rest}
                 onHide={() => setModalShow(false)}
               />
         )}

@@ -4,7 +4,7 @@ const Navbar = (props) => {
     return (
         <header>
             <div className="my-container">
-                <h1>Lift Tracker</h1>
+                <h1 className="main-heading">Lift Tracker</h1>
                 <nav>
                     <ul className="nav-options">
                         {props.children}

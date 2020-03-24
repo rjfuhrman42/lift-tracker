@@ -28,7 +28,16 @@ const Today = (props) => {
                 {
                     date.forEach(exercise => {                                    // grab each EXERCISE logged on that DATE        
                         let entry = exercise.val()                  
-                        let eventObject = 
+                        let eventObject = {}
+                        if(entry.restDay) {
+                            eventObject = {
+                                id: exercise.key,                      
+                                title: "Rest Day",                                // Check if today is a rest day
+                                start: date.key,
+                                color: '#D4F6FF'
+                            }
+                        }
+                        else eventObject = 
                         {
                             id: exercise.key,                                     // parse it into an Event Object so the <Calendar /> component can read it 
                             title: `${entry.exercise}

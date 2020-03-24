@@ -62,8 +62,10 @@ function App() {
           </li>
           <li>
             <Link to="/exercises">Exercises</Link>
+          </li>
+          <li>
+            <button onClick={() => fire.auth().signOut()}>Sign out</button> 
           </li>                                            
-          <button onClick={() => fire.auth().signOut()}>Sign out</button> 
         </Navbar>
         
         <TitleBar>{location.pathname === '/exercises' ? 'Exercise Search' : `${month} ${today.getFullYear()}`}</TitleBar>
@@ -87,14 +89,15 @@ function App() {
   else return (
     <div className="App">
         <Navbar>
-          <li>About</li>
-          <li>Exercises</li>    
-          <li>
+          <li>About</li> 
+          {/* <li>
             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={fire.auth()}/>
-          </li>
+          </li> */}
 
         </Navbar>
-        <IntroContent />
+        <IntroContent>
+          <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={fire.auth()}/>
+        </IntroContent>
     </div>
   );
 }

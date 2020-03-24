@@ -18,18 +18,32 @@ function MyWeek(props) {
         ref.on('value', (snapshot) => {                                                                                           
             snapshot.forEach(date => {                              // for each DATE in logged in the user's logs                       
                     date.forEach(exercise => {                      // grab each EXERCISE logged on that DATE        
-                        let entry = exercise.val()                  
-                        let eventObject = 
-                        {
-                            id: exercise.key,                       // parse it into an Event Object so the <Calendar /> component can read it 
-                            title: `${entry.exercise}
-                                    Reps: ${entry.reps}
-                                    Sets: ${entry.sets}
-                                    Weight: ${entry.weight} ${entry.measurement}`,                  
-                            start: date.key,
-                            reps: entry.reps,
-                            color: '#D4F6FF'
+                        let entry = exercise.val()    
+                        let eventObject = {}
+                        
+                        if(entry.restDay) {
+                            eventObject = {
+                                id: exercise.key,                      
+                                title: "Rest Day",                  
+                                start: date.key,
+                                color: '#D4F6FF'
+                            }
                         }
+                        else
+                        {
+                            eventObject = 
+                            {
+                                id: exercise.key,                       // parse it into an Event Object so the <Calendar /> component can read it 
+                                title: `${entry.exercise}
+                                        Reps: ${entry.reps}
+                                        Sets: ${entry.sets}
+                                        Weight: ${entry.weight} ${entry.measurement}`,                  
+                                start: date.key,
+                                reps: entry.reps,
+                                color: '#D4F6FF'
+                            }
+                        }               
+                
                         updateEvents(prevEvents => {
                             return [...prevEvents, eventObject]     // update the events state so that the calendar will also be updated 
                         })
