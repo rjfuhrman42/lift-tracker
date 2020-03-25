@@ -37,8 +37,8 @@ function Exercises() {
 
     return (
         <React.Fragment>
+            {/* <ModalButton rest="true"/> */}
             <div>
-                <ModalButton rest="true"/>
                 <SearchBar handlePress={handlePress}/>
             </div>
             <ul className="results-list">

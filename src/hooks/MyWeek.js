@@ -34,10 +34,13 @@ function MyWeek(props) {
                             eventObject = 
                             {
                                 id: exercise.key,                       // parse it into an Event Object so the <Calendar /> component can read it 
-                                title: `${entry.exercise}
-                                        Reps: ${entry.reps}
-                                        Sets: ${entry.sets}
-                                        Weight: ${entry.weight} ${entry.measurement}`,                  
+                                title: `
+                                        <b>${entry.exercise}</b>
+                                        <ul>
+                                            <li>Sets: ${entry.sets}</li>
+                                            <li>Reps: ${entry.reps}</li>
+                                            <li>Weight: ${entry.weight} ${entry.measurement}</li>
+                                        <ul>`,                
                                 start: date.key,
                                 reps: entry.reps,
                                 color: '#D4F6FF'
@@ -57,6 +60,9 @@ function MyWeek(props) {
         return () => ref.off()                                      // remove listeners from the DB reference
     }, [])
 
+    function allowHTML (info) {
+        info.el.querySelector('.fc-title').innerHTML = info.event.title;         // allow html in the title
+    }
 
     return (
         <div className="my-week">
@@ -68,6 +74,7 @@ function MyWeek(props) {
                         header={{left:   'title',center: '',right:  'today prev,next'}}
                         titleFormat={{day: 'numeric'}}
                         events={events}
+                        eventRender={allowHTML}
                         plugins={[ dayGridPlugin ]} 
             />
         </div>

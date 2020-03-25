@@ -16,7 +16,6 @@ const Today = (props) => {
                                                                                   // converts day number to actual day (e.g. 5 to Friday)
     
     function buildEvent() {
-        console.log('here')
         ref.on('value', (snapshot) => {
             snapshot.forEach(date => {
                 let cur = new Date(date.key)
@@ -31,19 +30,21 @@ const Today = (props) => {
                         let eventObject = {}
                         if(entry.restDay) {
                             eventObject = {
-                                id: exercise.key,                      
+                                id: exercise.key,                                 // ----------------------------
                                 title: "Rest Day",                                // Check if today is a rest day
-                                start: date.key,
+                                start: date.key,                                  // ----------------------------
                                 color: '#D4F6FF'
                             }
                         }
                         else eventObject = 
                         {
                             id: exercise.key,                                     // parse it into an Event Object so the <Calendar /> component can read it 
-                            title: `${entry.exercise}
-                                    Reps: ${entry.reps}
-                                    Sets: ${entry.sets}
-                                    Weight: ${entry.weight} ${entry.measurement}`,                  
+                            title: `<b>${entry.exercise}</b>
+                                    <ul>
+                                        <li>Sets: ${entry.sets}</li>
+                                        <li>Reps: ${entry.reps}</li>
+                                        <li>Weight: ${entry.weight} ${entry.measurement}</li>
+                                    <ul>`,                  
                             start: date.key,
                             reps: entry.reps,
                             color: '#D4F6FF'
@@ -60,7 +61,11 @@ const Today = (props) => {
     useEffect(() => {
         buildEvent()
         return () => ref.off()                                      // remove listeners from the DB reference
-    }, [])                                                                      
+    }, []) 
+    
+    function allowHTML (info) {
+        info.el.querySelector('.fc-title').innerHTML = info.event.title;         // allow html in the title
+    }
 
     return (
         <div className="today">
@@ -74,6 +79,7 @@ const Today = (props) => {
                         titleFormat={{weekday: 'long'}}
                         columnHeader={false}
                         events={events}
+                        eventRender={allowHTML}
                         plugins={[ dayGridPlugin ]} 
             />
         </div>
