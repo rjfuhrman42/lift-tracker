@@ -36,7 +36,7 @@ function MyWeek(props) {
                                 id: exercise.key,                       // parse it into an Event Object so the <Calendar /> component can read it 
                                 title: `
                                         <b>${entry.exercise}</b>
-                                        <ul>
+                                        <ul class="entry">
                                             <li>Sets: ${entry.sets}</li>
                                             <li>Reps: ${entry.reps}</li>
                                             <li>Weight: ${entry.weight} ${entry.measurement}</li>
@@ -71,7 +71,7 @@ function MyWeek(props) {
             </Link>
             <FullCalendar 
                         defaultView="dayGridWeek" 
-                        header={{left:   'title',center: '',right:  'today prev,next'}}
+                        header={{left:   '',center: '',right:  'today prev,next'}}
                         titleFormat={{day: 'numeric'}}
                         events={events}
                         eventRender={allowHTML}

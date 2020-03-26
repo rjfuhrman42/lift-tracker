@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {
   Switch,
   Route,
-  Link,
+  NavLink,
   useLocation
 } from "react-router-dom";
 import Context from "./context"
@@ -28,7 +28,6 @@ function App() {
 
   let location = useLocation();
   
-
   const uiConfig = {
     signInFlow: 'popup',
     signInOptions: [                              // this is needed to style the google sign in button
@@ -55,16 +54,16 @@ function App() {
       <div className="App">
         <Navbar>
           <li>
-            <Link to="/">Today</Link>
+            <NavLink to="/" exact={true} activeClassName="selected"> Today </NavLink>
           </li>
           <li>
-            <Link to="/myweek">My Week</Link>
+            <NavLink to="/myweek" activeClassName="selected"> My Week </NavLink>
           </li>
           <li>
-            <Link to="/exercises">Exercises</Link>
+            <NavLink to="/exercises" activeClassName="selected"> Exercises </NavLink>
           </li>
           <li>
-            <button onClick={() => fire.auth().signOut()}>Sign out</button> 
+            <button onClick={() => fire.auth().signOut()} className="sign-out-btn">Sign out</button> 
           </li>                                            
         </Navbar>
         

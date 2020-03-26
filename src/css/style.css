@@ -1,15 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 html, body{
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App {
   color: black;
+}
+
+a {
+  color: white;
+  padding: 0.25rem;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+  background-color: #D4F6FF;
+  border-radius: 0.25rem;
+
+  transition: color .15s ease-in-out, background-color .15s ease-in-out;
+}
+
+.selected {
+  background-color: #D4F6FF;
+  color: black;
+  border-radius: 0.25rem;
+ 
 }
 
 header{
@@ -57,6 +79,7 @@ nav {
   margin-right: 35px;
 }
 
+
 .intro-content-container {
   color: white;
   text-align: center;
@@ -95,12 +118,13 @@ nav {
   width: auto;
   height: 5vh;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .title-bar h2{
-  margin: 1px;
   padding-top: 10px;
   font-size: 24px;
+  padding-left: 130px;
 }
 
 .today {
@@ -170,21 +194,40 @@ nav {
 }
 
 .add-exercise {
-  background-color: #D4F6FF;
+  background-color: #D2D2D2;
+  border: none;
   position: absolute;
-  width: 10vw;
-  height: 5vh;
+  width: 12vw;
+  height: 40px;
+  border-radius: .25rem;
+  font-size: 14px;
   margin: 0 auto;
   left: 0%;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .add-exercise:hover {
-  background-color: rgb(52, 53, 71);
+  background-color: #151413;
+  color: white;
+}
+
+.sign-out-btn {
+  border: none;
+  height: 1.75em;
+  background-color: #D2D2D2;
+}
+
+.sign-out-btn:hover {
+  background-color: red;
   color: white;
 }
 
 .my-week {
   text-align: center;
+}
+
+.entry {
+  list-style-type: circle;
 }
 
 .rest-button {
@@ -213,6 +256,19 @@ nav {
   .ex-name {
     padding: 0.25rem;
   }
+
+  .add-exercise {
+    width: 17vw;
+  }
+  
+  .fc table {
+    min-width: 1120px;
+  }
+
+  .fc-view-container {
+    overflow: scroll;
+    height: 500px;
+  }
 }
 
 @media (max-width: 786px) {
@@ -228,6 +284,11 @@ nav {
   .results-list li {
 
     width: 90vw;
+  }
+
+  .add-exercise {
+    font-size: 12px;
+    width: 24vw;
   }
 }
 
@@ -252,9 +313,25 @@ nav {
     margin-right: 15px;
   }
 
+  .my-container h1 {
+    padding-top: 30px;
+    width: 50%;
+    font-size: 16px;
+  }
   
   .results-list li {
-    font-size: 12px;
+    font-size: 16px;
     width: 90vw;
+    height: 9vh;
   }
+
+  .add-exercise {
+    height: 6vh;
+  }
+
+  .title-bar h2{
+    font-size: 14px;
+    padding-top: 16px;
+  }
+  
 }

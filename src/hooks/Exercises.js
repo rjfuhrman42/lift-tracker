@@ -1,18 +1,22 @@
 import React, {useState} from "react"
 import SearchBar from "./SearchBar"
+import Spinner from 'react-bootstrap/Spinner'
 
 import ModalButton from './Modal/ModalButton';
 
 function Exercises() {
 
     const [results, updateResults] = useState("")
+    const [isLoading, setIsLoading] = useState(false);
 
     async function getExercises(api_url)
     {
+        setIsLoading(true);
         fetch(api_url)
         .then(exercises => exercises.json())
         .then(data => {
             console.log(data.suggestions)
+            setIsLoading(false)
                         if(data.suggestions.length === 0) updateResults(<li>No results found!</li>)
                         else
                         updateResults(data.suggestions
@@ -41,8 +45,9 @@ function Exercises() {
             <div>
                 <SearchBar handlePress={handlePress}/>
             </div>
+            
             <ul className="results-list">
-                {results} 
+                {isLoading ? <li><Spinner animation="border" /></li> : results} 
             </ul>
         </React.Fragment>
     )
