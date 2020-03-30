@@ -4,6 +4,8 @@ Keep track of your daily workout, so you can see your progress! Make use of the 
 
 ![image](https://i.imgur.com/QRhvDvv.gifraw=true "Preview")
 
+# This website is live here https://lift-tracker-99bdc.web.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
