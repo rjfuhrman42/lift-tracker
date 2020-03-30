@@ -24,7 +24,7 @@ function MyWeek(props) {
                         if(entry.restDay) {
                             eventObject = {
                                 id: exercise.key,                      
-                                title: "Rest Day",                  
+                                title: "<h1>Rest Day</h1>",                    
                                 start: date.key,
                                 color: '#D4F6FF'
                             }

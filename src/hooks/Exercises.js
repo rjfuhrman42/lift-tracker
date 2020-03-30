@@ -11,6 +11,7 @@ function Exercises() {
 
     async function getExercises(api_url)
     {
+        console.log(api_url)
         setIsLoading(true);
         fetch(api_url)
         .then(exercises => exercises.json())
@@ -35,15 +36,22 @@ function Exercises() {
         if(e.key === "Enter" && e.target.value) // check if enter key is pressed and if the search query defined
         {
             getExercises(`https://wger.de//api/v2/exercise/search/?term=${e.target.value}`)
-        }
-        
+        } 
+    }
+
+    const handleClick = (e) => {
+        if(e.target.previousSibling.value)
+         getExercises(`https://wger.de//api/v2/exercise/search/?term=${e.target.previousSibling.value}`) // The sibling element is the input box
     }
 
     return (
         <React.Fragment>
             {/* <ModalButton rest="true"/> */}
             <div>
-                <SearchBar handlePress={handlePress}/>
+                <SearchBar 
+                            handlePress={handlePress}
+                            handleClick={handleClick}
+                />
             </div>
             
             <ul className="results-list">

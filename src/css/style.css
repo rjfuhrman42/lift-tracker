@@ -145,14 +145,28 @@ nav {
 }
 
 .search{
-  width: 65vw;
+  width: 90%;
   padding-top: 10px;
-  height: 30px;
+  height: 1.25em;
   font-size: 24px;
   color: black;
   background: transparent;
   border: none;
   text-align: left;
+}
+
+.search-button{
+  float: right;
+  border: none;
+  height: 1.75em;
+  width: 1.75em;
+  margin-top: 0.25em;
+  background: url("../assets/black_mag.png");
+  background-size: 1.75em;
+}
+
+#mag-glass {
+  height: 2rem;
 }
 
 .results-list {
@@ -245,7 +259,7 @@ nav {
     font-size: 28px;
   }
 
-  .search, .search_bar {
+.search_bar {
     width: 70vw;
   }
 
@@ -277,7 +291,7 @@ nav {
     font-size: 22px;
   }
 
-  .search, .search_bar {
+.search_bar {
     width: 90vw;
   }
 
@@ -295,10 +309,11 @@ nav {
 @media (max-width: 620px) {
   .my-container h1 {
     padding-top: 30px;
+    width: 10vw;
     font-size: 18px;
   }
 
-  .search, .search_bar {
+.search_bar {
     width: 90vw;
   }
 
@@ -315,7 +330,7 @@ nav {
 
   .my-container h1 {
     padding-top: 30px;
-    width: 50%;
+    width: 10%;
     font-size: 16px;
   }
   

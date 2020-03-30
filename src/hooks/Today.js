@@ -31,7 +31,7 @@ const Today = (props) => {
                         if(entry.restDay) {
                             eventObject = {
                                 id: exercise.key,                                 // ----------------------------
-                                title: "Rest Day",                                // Check if today is a rest day
+                                title: "<h1>Rest Day</h1>",                                // Check if today is a rest day
                                 start: date.key,                                  // ----------------------------
                                 color: '#D4F6FF'
                             }
