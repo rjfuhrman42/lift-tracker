@@ -1,10 +1,10 @@
-## Lift Tracker
+# Lift Tracker
 
 Keep track of your daily workout, so you can see your progress! Make use of the WGER API to search for the exact exercise you did!
 
 ![image](https://i.imgur.com/QRhvDvv.gifraw=true "Preview")
 
-# This website is live here https://lift-tracker-99bdc.web.app/
+## This website is live here https://lift-tracker-99bdc.web.app/
 
 ## Available Scripts
 
