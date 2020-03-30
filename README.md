@@ -2,6 +2,8 @@
 
 Keep track of your daily workout, so you can see your progress! Make use of the WGER API to search for the exact exercise you did!
 
+![image](https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif?raw=true "Preview")
+
 ## Available Scripts
 
 In the project directory, you can run:
