@@ -7,12 +7,13 @@ import {
 } from "react-router-dom";
 import Context from "./context"
 
-import Navbar from "./hooks/Navbar"
-import Today from "./hooks/Today"
-import MyWeek from "./hooks/MyWeek"
-import Exercises from "./hooks/Exercises"
-import TitleBar from "./hooks/TitleBar"
-import IntroContent from "./hooks/IntroContent"
+import Today from "./components/Today"
+import Footer from "./components/Footer"
+import Navbar from "./components/Navbar"
+import MyWeek from "./components/MyWeek"
+import TitleBar from "./components/TitleBar"
+import Exercises from "./components/Exercises"
+import IntroContent from "./components/IntroContent"
 
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
@@ -80,6 +81,7 @@ function App() {
             <Exercises />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Context.Provider>
   )
@@ -97,6 +99,7 @@ function App() {
         <IntroContent>
           <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={fire.auth()}/>
         </IntroContent>
+        <Footer />
     </div>
   );
 }
