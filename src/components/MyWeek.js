@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useRef} from "react"
 import {Link} from "react-router-dom"
 import FullCalendar from '@fullcalendar/react'
 import TitleBar from "./TitleBar"
@@ -12,7 +12,7 @@ function MyWeek(props) {
 
     let [events, updateEvents] = useState([])
     var ref = firebase.database().ref(`/users/${props.uid}/logs`)   // get a reference to the logs section of data in the firebase RTDB 
-    
+
 
     function buildEvent()
     {

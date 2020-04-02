@@ -7,6 +7,7 @@ html, body{
   height: 100%;
   /* font-family: 'Montserrat'; */
   font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 
 .App {
@@ -169,6 +170,11 @@ nav {
   margin-bottom: 50px;
 }
 
+.about-section {
+  height: 100vh;
+  background-color: #312f2d;
+}
+
 .title-bar {
   
   background-color: #E7E6E3;
@@ -303,6 +309,18 @@ nav {
 
 .rest-button {
   background-color: blue;
+}
+
+.edit-page{
+  height: 100vh;
+}
+
+.entry-item ul{
+  display: none;
+}
+
+.entry-item.show ul{
+  display: contents;
 }
 
 /* .fc-view-container{

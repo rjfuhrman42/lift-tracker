@@ -12,17 +12,17 @@ function Footer() {
                 <ul className="socials">
                         <li>
                             <a href="https://github.com/rjfuhrman42" target="_blank">
-                                <i class="ri-github-fill ri-xl"></i>
+                                <i className="ri-github-fill ri-xl"></i>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.linkedin.com/in/reid-fuhrman-73324b180/" target="_blank">
-                                <i class="ri-linkedin-box-fill ri-xl"></i>
+                                <i className="ri-linkedin-box-fill ri-xl"></i>
                             </a>
                         </li>
                         <li>
                             <a href="mailto:reidjf77@gmail.com" target="_blank">
-                            <i class="ri-mail-fill ri-xl"></i>
+                            <i className="ri-mail-fill ri-xl"></i>
                             </a>
                         </li>
                 </ul>

@@ -8,11 +8,13 @@ import {
 import Context from "./context"
 
 import Today from "./components/Today"
+import About from "./components/About"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import MyWeek from "./components/MyWeek"
 import TitleBar from "./components/TitleBar"
 import Exercises from "./components/Exercises"
+import EditEntries from "./components/EditEntries"
 import IntroContent from "./components/IntroContent"
 
 import firebase from "firebase"
@@ -64,6 +66,9 @@ function App() {
             <NavLink to="/exercises" activeClassName="selected"> Exercises </NavLink>
           </li>
           <li>
+            <NavLink to="/edit" activeClassName="selected"> Edit </NavLink>
+          </li>
+          <li>
             <button onClick={() => fire.auth().signOut()} className="sign-out-btn">Sign out</button> 
           </li>                                            
         </Navbar>
@@ -80,6 +85,9 @@ function App() {
           <Route path="/exercises">
             <Exercises />
           </Route>
+          <Route path="/edit">
+            <EditEntries uid={userID}/>
+          </Route>
         </Switch>
         <Footer />
       </div>
@@ -90,7 +98,9 @@ function App() {
   else return (
     <div className="App">
         <Navbar>
-          <li>About</li> 
+          <li>
+            <a href="#about">About</a>
+          </li> 
           {/* <li>
             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={fire.auth()}/>
           </li> */}
@@ -99,6 +109,7 @@ function App() {
         <IntroContent>
           <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={fire.auth()}/>
         </IntroContent>
+        <About />
         <Footer />
     </div>
   );
