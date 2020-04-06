@@ -270,6 +270,14 @@ nav {
   display: inline-block;
 }
 
+.del-btn {
+  background-color: #D2D2D2;
+  color: black;
+  border: none;
+  border-radius: 0.25em;
+  height: 1.75em;
+}
+
 .add-exercise {
   background-color: #D2D2D2;
   border: none;
@@ -294,7 +302,7 @@ nav {
   background-color: #D2D2D2;
 }
 
-.sign-out-btn:hover {
+.sign-out-btn:hover, .del-btn:hover {
   background-color: red;
   color: white;
 }
@@ -315,12 +323,21 @@ nav {
   height: 100vh;
 }
 
+.entry-item {
+  cursor: pointer;
+}
+
 .entry-item ul{
   display: none;
 }
 
 .entry-item.show ul{
-  display: contents;
+  display: list-item;
+  list-style-type: none;
+}
+
+.entry-list{
+  list-style-type: none;
 }
 
 /* .fc-view-container{
@@ -364,6 +381,7 @@ nav {
   .my-container h1 {
     padding-top: 28px;
     font-size: 22px;
+    width: 10vw;
   }
 
 .search_bar {
@@ -405,8 +423,8 @@ nav {
 
   .my-container h1 {
     padding-top: 30px;
-    width: 10%;
-    font-size: 16px;
+    width: 9vw;
+    font-size: 14px;
   }
   
   .results-list li {
