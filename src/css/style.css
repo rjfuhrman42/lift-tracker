@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap');
 
 html, body{
   margin: 0;
@@ -173,10 +173,47 @@ nav {
 .about-section {
   height: 100vh;
   background-color: #312f2d;
+  color: white;
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  flex-direction: row;
+}
+
+.about-gif-container, .about-description-container{
+  text-align: center;
+  width: 49vw;
+}
+
+.about-description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding-left: 1.5em;
+  height: 100%;
+}
+
+#about-gif {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.description-content h2{
+  font-weight: 600;
+}
+
+.description-content{
+  text-align: left;
+  font-size: 20px;
+  font-weight: 300;
+  width: 30vw;
+  background-color: #151413;
+  padding: 1em;
+  border-radius: 10px;
 }
 
 .title-bar {
-  
   background-color: #E7E6E3;
   width: auto;
   height: 5vh;
@@ -345,6 +382,19 @@ nav {
 } */
 
 
+@media (max-width: 1200px){
+  .about-section{
+    flex-direction: column;
+
+  }
+  .description-content, .description-content h2{
+    width: 100%;
+    font-size: 16px;
+  }
+
+}
+
+
 @media (max-width: 1120px) {
   .my-container h1 {
     padding-top: 22px;
@@ -375,6 +425,10 @@ nav {
     overflow: scroll;
     height: 500px;
   }
+  /* .about-gif-container, .about-description-container{
+    width: 56vw;
+  } */
+
 }
 
 @media (max-width: 786px) {
@@ -396,6 +450,10 @@ nav {
   .add-exercise {
     font-size: 12px;
     width: 24vw;
+  }
+
+  .about-gif-container, .about-description-container{
+    width: 68vw;
   }
 }
 
@@ -421,6 +479,14 @@ nav {
     margin-right: 15px;
   }
 
+  .intro-heading{
+    font-size: 40px;
+  }
+
+  .about-description-container h1 {
+    font-size: 20px;
+  }
+
   .my-container h1 {
     padding-top: 30px;
     width: 9vw;
@@ -428,7 +494,7 @@ nav {
   }
   
   .results-list li {
-    font-size: 16px;
+    font-size: 13px;
     width: 90vw;
     height: 9vh;
   }
@@ -440,6 +506,15 @@ nav {
   .title-bar h2{
     font-size: 14px;
     padding-top: 16px;
+  }
+
+  .about-gif-container{
+    width: 80vw;
+  }
+
+  .description-content, .description-content h2{
+    width: 100%;
+    font-size: 14px;
   }
   
 }
